@@ -1,1 +1,6 @@
 <h1>Create new author</h1>
+<form action="/authors" method="POST">
+  <%- include("./_form_fields.ejs") %>
+  <button type="submit">Add record</button>
+  <a href="/authors">Cancel</a>
+</form>

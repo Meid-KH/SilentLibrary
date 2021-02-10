@@ -5,11 +5,49 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Silent Library</title>
+    <style>
+      *,
+      *::after,
+      *::before {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-size: 16px;
+        font-family: Arial, sans-serif;
+        background-color: #272727;
+        color: #e8e8e8;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+      header {
+        padding: 30px;
+        background-color: rgba(255, 255, 255, 0.2);
+        border-radius: 10px;
+      }
+      main {
+        padding: 3rem 0;
+      }
+      footer {
+        padding: 30px;
+        background-color: rgba(255, 255, 255, 0.2);
+        border-radius: 10px;
+      }
+    </style>
   </head>
-  <body style="background-color: #272727; color: #e8e8e8">
-    <h1>Welcome to Silent Library XD</h1>
-    <%- body %>
-    <br />
-    <%- include('../partial/footer.ejs') %>
+  <body>
+    <div class="container">
+      <%- include('../partial/header.ejs') %>
+      <main><%- body %></main>
+      <%- include('../partial/footer.ejs') %>
+    </div>
   </body>
 </html>
