@@ -1,7 +1,14 @@
 <h1>List of all authors</h1>
+<form action="/authors" method="GET">
+  <h4>You entered : <%= outputValue %></h4>
+  <div class="form-group">
+    <label>Search for authors :</label>
+    <input type="text" name="name" value="<%= outputValue %>" />
+    <button type="submit">Search</button>
+  </div>
+</form>
 <ul>
-  <%= authors.length %> 
-  <% Array.from(authors).forEach(auth => { %>
+  <% authors.forEach(auth => { %>
   <li><%= auth.name %></li>
   <% }); %>
 </ul>
