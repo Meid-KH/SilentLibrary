@@ -35,5 +35,5 @@ mongoose.connect(databaseUrl, {
   useNewUrlParser: true,
 })
 const DB = mongoose.connection
-DB.on("error", (error) => console.error(error))
+DB.on("error", (error) => console.error("DB ERRROORR !!!" + error))
 DB.once("open", () => console.log("Connected to mongoose with success !"))

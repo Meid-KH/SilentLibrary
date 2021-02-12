@@ -4,8 +4,12 @@ const Author = require("../models/author")
 
 // All author
 router.get("/", async (req, res) => {
-  const author = await Author.find({})
-  res.render("authors/index", author)
+  try {
+    const authors = await Author.find({})
+    res.render("authors/index", { authors: authors })
+  } catch {
+    res.redirect("/")
+  }
 })
 
 // New author
@@ -15,11 +19,18 @@ router.get("/new", (req, res) =>
 
 // Create new author
 router.post("/", async (req, res) => {
+  const author = new Author({
+    name: req.body.name,
+  })
   try {
-    const newAuthor = await req.body.name
-    res.redirect("/", newAuthor)
-  } catch (error) {
-    console.error(error)
+    const newAuthor = await author.save()
+    // res.redirect(`newAuthor/${author.id}`)
+    res.redirect(`authors`)
+  } catch {
+    res.render(`authors/new`, {
+      author: author,
+      errorMessage: "Error occured while creating an author record!",
+    })
   }
 })
 

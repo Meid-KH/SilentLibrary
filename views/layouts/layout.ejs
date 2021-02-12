@@ -46,7 +46,10 @@
   <body>
     <div class="container">
       <%- include('../partial/header.ejs') %>
-      <main><%- body %></main>
+      <br>
+      <%- include('../partial/errorMessage.ejs') %>
+      <main>
+        <%- body %></main>
       <%- include('../partial/footer.ejs') %>
     </div>
   </body>

@@ -1,6 +1,7 @@
 <h1>List of all authors</h1>
 <ul>
-  <% author.forEach(auth => { %>
+  <%= authors.length %> 
+  <% Array.from(authors).forEach(auth => { %>
   <li><%= auth.name %></li>
   <% }); %>
 </ul>
